@@ -1,0 +1,46 @@
+<div class="container py-4">
+
+  @if (hero) {
+
+    <div class="card shadow-sm">
+
+      <div class="row g-0">
+
+        <div class="col-md-4">
+          <img [src]="hero.images?.lg" class="img-fluid rounded-start" alt="{{ hero.name }}">
+        </div>
+
+        <div class="col-md-8">
+          <div class="card-body">
+
+            <h2 class="card-title">{{ hero.name }}</h2>
+            <p class="card-text text-muted">{{ hero.slug }}</p>
+
+            <hr>
+
+            <h5>Apariencia</h5>
+            <p><strong>Raza:</strong> {{ hero.appearance?.race }}</p>
+            <p><strong>Altura:</strong> {{ hero.appearance?.height?.[1] }}</p>
+            <p><strong>Peso:</strong> {{ hero.appearance?.weight?.[1] }}</p>
+
+            <hr>
+
+            <h5>Trabajo</h5>
+            <p><strong>Ocupación:</strong> {{ hero.work?.occupation }}</p>
+
+            <hr>
+
+            <h5>Biografía</h5>
+            <p><strong>Primera aparición:</strong> {{ hero.biography?.firstAppearance }}</p>
+            <p><strong>Editor:</strong> {{ hero.biography?.publisher }}</p>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  }
+
+</div>

@@ -1,0 +1,33 @@
+<div class="container mt-4">
+
+    <div>
+        <h1 class="text-center">Superheros</h1>
+    </div>
+    <div class="row">
+
+    @for (hero of heroes; track hero.id) {
+      <div class="col-md-3 mb-3">
+        <div class="card h-100 shadow-sm" (click)="openHero(hero)" style="cursor: pointer;">
+          
+          <img [src]="hero.images?.md" class="card-img-top" alt="{{ hero.name }}">
+
+          <div class="card-body">
+            <h5 class="card-title">{{ hero.name }}</h5>
+            <p class="card-text">
+              <strong>Raza:</strong> {{ hero.appearance?.race }} <br>
+              <strong>Altura:</strong> {{ hero.appearance?.height?.[1] }}
+            </p>
+          </div>
+
+        </div>
+      </div>
+    }
+
+  </div>
+
+  <div class="text-center mt-4">
+    <button class="btn btn-secondary me-2" (click)="prevPage()" [disabled]="page === 1">Anterior</button>
+    <button class="btn btn-primary" (click)="nextPage()" [disabled]="page === totalPages">Siguiente</button>
+  </div>
+
+</div>
